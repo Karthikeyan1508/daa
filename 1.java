@@ -27,7 +27,39 @@ public class MergeSortExample {
             System.out.print(num + " ");
         }
     }
+    // This is to plot graph : 
+    /* 
+    public static void main(String[] args) {
+        int[] inputSizes = {500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500}; // define your input sizes
+        long[][] executionTimes = new long[inputSizes.length][2];
 
+        for (int i = 0; i < inputSizes.length; i++) {
+            int size = inputSizes[i];
+            int[] arr = generateRandomArray(size);
+
+            long startTime = System.nanoTime(); // start time
+
+            mergeSort(arr); // call merge sort
+
+            long endTime = System.nanoTime(); // end time
+
+            long executionTime = endTime - startTime; // execution time
+
+            executionTimes[i][0] = size;
+            executionTimes[i][1] = executionTime;
+        }
+        // Print the execution times in the required format for JavaScript
+        System.out.print("data.addRows([");
+        for (int i = 0; i < executionTimes.length; i++) {
+            System.out.print("[" + executionTimes[i][0] + ", " + executionTimes[i][1] + "]");
+            if (i < executionTimes.length - 1) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println("]);");
+    } 
+    */
+    
     public static void mergeSort(int[] arr) {
         if (arr.length <= 1) {
             return;
