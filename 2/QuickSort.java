@@ -1,4 +1,6 @@
+
 import java.util.Random;
+import java.util.Scanner;
 
 public class QuickSort {
 
@@ -46,7 +48,8 @@ public class QuickSort {
         return arr;
     }
 
-    // Main method
+    // This is to plot graph : 
+    /* 
     public static void main(String[] args) {
         int[] inputSizes = {500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500}; // Define input sizes
         long[][] executionTimes = new long[inputSizes.length][2];
@@ -73,5 +76,39 @@ public class QuickSort {
             }
         }
         System.out.println("]);");
+    }
+     */
+    public static void main(String[] args) {
+        System.out.println("Enter the array size");
+        try (Scanner scan = new Scanner(System.in)) {
+            int n = scan.nextInt();
+
+            int[] a = new int[max];
+
+            Random r = new Random();
+            for (int i = 0; i < n; i++) {
+                a[i] = r.nextInt(20);
+            }
+
+            System.out.println("Array before sorting");
+            for (int i = 0; i < n; i++) {
+                System.out.print(a[i] + " ");
+            }
+            long startTime = System.nanoTime();
+            QuickSort m = new QuickSort();
+            m.sort(a, 0, n - 1);
+            long stopTime = System.nanoTime();
+            long elapseTime = (stopTime - startTime);
+
+            System.out.println("\nTime taken to sort array is:" + elapseTime + "nanoseconds");
+
+            System.out.println("Sorted array is");
+
+            for (int i = 0; i < n; i++) {
+                System.out.print(a[i] + " ");
+            }
+
+            scan.close();
+        }
     }
 }
