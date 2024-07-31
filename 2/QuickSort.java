@@ -3,7 +3,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class QuickSort {
-
+    static int max = 2000;
     // Partition method for QuickSort
     int partition(int[] a, int low, int high) {
         int p, i, j, temp;
