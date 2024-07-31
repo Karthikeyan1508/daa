@@ -1,7 +1,6 @@
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
-public class MergeSortExample {
+public class MergeSort {
     public static void main(String[] args) {
         Random rand = new Random();
         int[] arr = new int[1000]; // array to sort
