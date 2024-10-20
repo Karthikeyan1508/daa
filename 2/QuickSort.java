@@ -1,9 +1,8 @@
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class QuickSort {
-    static int max = 2000;
+    static int max = 20;
     // Partition method for QuickSort
     int partition(int[] a, int low, int high) {
         int p, i, j, temp;
@@ -43,25 +42,25 @@ public class QuickSort {
         Random rand = new Random();
         int[] arr = new int[size];
         for (int i = 0; i < size; i++) {
-            arr[i] = rand.nextInt(10000); // Use a larger range for better simulation
+            arr[i] = rand.nextInt(1000); // Use a larger range for better simulation
         }
         return arr;
     }
 
     // This is to plot graph : 
-    /* 
+     
     public static void main(String[] args) {
-        int[] inputSizes = {500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500}; // Define input sizes
-        long[][] executionTimes = new long[inputSizes.length][2];
+        int[] inputSizes = {10, 20, 30, 40, 50, 60}; // Define input sizes
+        double[][] executionTimes = new double[inputSizes.length][2];
 
         for (int i = 0; i < inputSizes.length; i++) {
             int size = inputSizes[i];
             int[] arr = generateRandomArray(size);
-            long startTime = System.nanoTime();
+            double startTime = System.nanoTime();
             QuickSort m = new QuickSort();
             m.sort(arr, 0, arr.length - 1);
-            long stopTime = System.nanoTime();
-            long elapseTime = stopTime - startTime;
+            double stopTime = System.nanoTime();
+            double elapseTime = (stopTime - startTime)/ 1e6;
 
             executionTimes[i][0] = size;
             executionTimes[i][1] = elapseTime;
@@ -77,38 +76,35 @@ public class QuickSort {
         }
         System.out.println("]);");
     }
-     */
-    public static void main(String[] args) {
-        System.out.println("Enter the array size");
-        try (Scanner scan = new Scanner(System.in)) {
-            int n = scan.nextInt();
-
-            int[] a = new int[max];
-
-            Random r = new Random();
-            for (int i = 0; i < n; i++) {
-                a[i] = r.nextInt(20);
-            }
-
-            System.out.println("Array before sorting");
-            for (int i = 0; i < n; i++) {
-                System.out.print(a[i] + " ");
-            }
-            long startTime = System.nanoTime();
-            QuickSort m = new QuickSort();
-            m.sort(a, 0, n - 1);
-            long stopTime = System.nanoTime();
-            long elapseTime = (stopTime - startTime);
-
-            System.out.println("\nTime taken to sort array is:" + elapseTime + "nanoseconds");
-
-            System.out.println("Sorted array is");
-
-            for (int i = 0; i < n; i++) {
-                System.out.print(a[i] + " ");
-            }
-
-            scan.close();
-        }
-    }
+     
+    // public static void main(String[] args) {
+    //     int n = 40;  // Hardcoded array size for testing
+    //     int[] a = new int[n];  // Adjusted array size to hardcoded input
+    
+    //     Random r = new Random();
+    //     for (int i = 0; i < n; i++) {
+    //         a[i] = r.nextInt(1000);
+    //     }
+    
+    //     System.out.println("Array before sorting:");
+    //     for (int i = 0; i < n; i++) {
+    //         System.out.print(a[i] + " ");
+    //     }
+    //     System.out.println();
+    
+    //     double startTime = System.nanoTime();
+    //     QuickSort m = new QuickSort();
+    //     m.sort(a, 0, n - 1);
+    //     double stopTime = System.nanoTime();
+    //     double elapseTime = (stopTime - startTime) / 1e6;
+    
+    //     System.out.println("Time taken to sort array is: " + elapseTime + " ms");
+    
+    //     System.out.println("Sorted array is:");
+    //     for (int i = 0; i < n; i++) {
+    //         System.out.print(a[i] + " ");
+    //     }
+    //     System.out.println();
+    // }
+    
 }

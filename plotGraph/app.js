@@ -1,29 +1,30 @@
-google.charts.load('current', { packages: ['corechart', 'line'] });
+google.charts.load("current", { packages: ["corechart", "line"] });
 google.charts.setOnLoadCallback(drawBasic);
 
 function drawBasic() {
-
   var data = new google.visualization.DataTable();
-  data.addColumn('number', 'X');
-  data.addColumn('number', 'Time');
+  data.addColumn("number", "X");
+  data.addColumn("number", "Time");
 
   /* This part is to be replaced after the execution of Java Program */
 
-  data.addRows([[500, 410900], [1000, 255000], [1500, 265200], [2000, 279200], [2500, 279000], [3000, 334500], [3500, 497100], [4000, 457900], [4500, 549400]]);
-  
+  data.addRows([[10, 0.0086], [20, 0.0063], [30, 0.0101], [40, 0.0148], [50, 0.023], [60, 0.025]]);
   /* --- */
 
   var options = {
     hAxis: {
-      title: 'Time'
+      title: "Input Size",
     },
+    curveType: 'function',
     vAxis: {
-      title: 'Input'
+      title: "Time (ms)",
     },
-    height: window.innerHeight / 1.5
+    height: window.innerHeight / 1.5,
   };
 
-  var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+  var chart = new google.visualization.LineChart(
+    document.getElementById("chart_div")
+  );
 
   chart.draw(data, options);
 }
